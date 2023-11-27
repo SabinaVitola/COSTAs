@@ -1,0 +1,40 @@
+%**The following code is NOT needed to run COSTAs. However, if the user is only interested in the plots (instead of the GUI) this script should be enough to run the whole system. 
+
+
+import ModelParameters.*
+import ModelSystem.*
+import ode45.*
+
+
+% Create an instance of ModelParameters and ModelSystem
+params = ModelParameters();
+mySys = ModelSystem(params);
+
+% Set initial conditions and time
+initial = [0.1; 1.5; 0.1]; % uM as a column vector 
+Tmax = 600;
+dt = 0.1;
+t = 0:dt:Tmax;
+
+
+% Solve the system of ODEs using ode45
+[t, data] = ode45(@(t, state) mySys.computeDeriv(state, t), t, initial'); %' transposing initial to use column vector
+
+% Plot the results
+figure('Position', [100, 100, 800, 600]);
+ 
+subplot(3, 1, 1);
+plot(t, data(:, 1));
+title('Calcium concentration');
+ylabel('Ca (uM)');
+ 
+subplot(3, 1, 2);
+plot(t, data(:, 3));
+title('IP3 concentration');
+ylabel('IP3 (uM)');
+ 
+subplot(3, 1, 3);
+plot(t, data(:, 2));
+title('Calcium concentration in the ER');
+ylabel('CaER (uM)');
+xlabel('t (s)');
