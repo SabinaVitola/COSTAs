@@ -1,3 +1,6 @@
+%The following code stores COSTAs' parameters in a separate class to be called on by the App when it is run.
+%Please see *COSTAs variables report* for more information on where the values come from.
+
 classdef ModelParameters
   properties (Access = public ) %giving app access to the properties  
         k_2 = 0.1     % uM -- Hill equation hmr for Vserca
