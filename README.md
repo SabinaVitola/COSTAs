@@ -5,6 +5,8 @@ Created an intuitive GUI based on the mathematical model of spontaneous calcium(
 
 Lavrentovich, Maxim, and Sheryl Hemkin. “A mathematical model of spontaneous calcium(ii) oscillations in astrocytes.” Journal of Theoretical Biology, vol. 251, no. 4, 14 Feb. 2008, pp. 553–560, https://doi.org/10.1016/j.jtbi.2007.12.011. 
 
+Code adapted from available Python code contributed by Dr T Manninen. Github user tommorse. 
+
 HOW TO RUN COSTAs:
 
 **note** ODE45 packet should be installed before running any code
