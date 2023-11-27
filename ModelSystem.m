@@ -1,3 +1,5 @@
+%The following code creates a separate class with all the equations for the Laventrovich (2008) model
+
 classdef ModelSystem 
     properties
         params
